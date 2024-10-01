@@ -43,3 +43,15 @@ module.exports = {
     }
   },
 };
+
+const { count, rows } = await Model.userModel.findAndCountAll({
+  where: {
+    title: {
+      [Op.like]: 'foo%',
+    },
+  },
+  offset: 10,
+  limit: 2,
+});
+console.log(count);
+console.log(rows);

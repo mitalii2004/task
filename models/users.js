@@ -5,11 +5,6 @@ module.exports = (Sequelize, sequelize, Datatypes) => {
     "users",
     {
       ...require("./cors")(Sequelize, Datatypes),
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-      },
       name: {
         type: DataTypes.VARCHAR,
         allowNull: false,
