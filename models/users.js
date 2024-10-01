@@ -6,7 +6,7 @@ module.exports = (Sequelize, sequelize, Datatypes) => {
     {
       ...require("./cors")(Sequelize, Datatypes),
       name: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING(255),
         allowNull: false,
       },
       age: {
@@ -14,7 +14,7 @@ module.exports = (Sequelize, sequelize, Datatypes) => {
         allowNull: false,
       },
       email: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING(255),
         allowNull: false,
       },
     },
