@@ -42,16 +42,23 @@ module.exports = {
       throw error;
     }
   },
-};
 
-const { count, rows } = await Model.userModel.findAndCountAll({
-  where: {
-    title: {
-      [Op.like]: 'foo%',
-    },
+  findAndCountRecord: async (req, res) => {
+    try {
+      let response = await Model.userModel.findAndCountAll();
+      return res.send(response);
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
   },
-  offset: 10,
-  limit: 2,
-});
-console.log(count);
-console.log(rows);
+
+  count: async () => {
+    try {
+      let response = await Model.userModel.count();
+      return res.send(response);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+};
